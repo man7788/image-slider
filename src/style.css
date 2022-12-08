@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(50, 50, 50);
+}
+
+.container {
+  border: 2px solid orange;
+  width: 1000px;
+  height: 364px;
+}
+
+.slides {
+  display: flex;
+  justify-content: center;
+}
+
+.slides img {
+  max-width: 640px;
+  max-height: 360px;
+  width: auto;
+  height: auto;
+}

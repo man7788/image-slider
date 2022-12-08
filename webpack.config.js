@@ -7,7 +7,8 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'New Title',
+      title: 'Image Slider',
+      template: './src/template.html',
     }),
   ],
   output: {
