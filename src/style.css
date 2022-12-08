@@ -12,16 +12,24 @@ body {
   border: 2px solid orange;
   width: 1000px;
   height: 364px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .slides {
+  border: 2px solid greenyellow;
   display: flex;
-  justify-content: center;
+  /* justify-self: center; */
 }
 
-.slides img {
-  max-width: 640px;
-  max-height: 360px;
-  width: auto;
-  height: auto;
+.arrow-left img,
+.arrow-right img {
+  height: 100px;
+}
+
+.arrow-left,
+.arrow-right {
+  align-self: center;
+  filter: invert(70%);
+  cursor: pointer;
 }
