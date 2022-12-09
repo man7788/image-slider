@@ -1,6 +1,9 @@
 import './style.css';
 import appendToSlides from './appendImage';
-import hideImage from './styleImage';
+import { defaultImage } from './styleImage';
+import { clickArrowLeft, clickArrowRight } from './arrowControl';
 
 appendToSlides();
-hideImage();
+defaultImage();
+clickArrowLeft();
+clickArrowRight();
