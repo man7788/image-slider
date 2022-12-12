@@ -1,5 +1,11 @@
 import findElement from './findElement';
-import { showImage, hideImage } from './styleImage';
+import {
+  toggleSlideToLeft,
+  toggleSlideToRight,
+  slideCurrentLeft,
+  slideCurrentRight,
+  showNextSlide,
+} from './styleImage';
 
 function clickArrowLeft() {
   const { arrowLeftDiv } = findElement();
@@ -9,13 +15,15 @@ function clickArrowLeft() {
     let trigger = true;
     list.forEach((img) => {
       if (img.style.display !== 'none' && trigger) {
-        if (img.previousSibling === null) {
-          showImage(list[list.length - 1]);
-          hideImage(img);
+        if (img.nextSibling === null) {
+          toggleSlideToLeft(img);
+          slideCurrentLeft(img, 300);
+          showNextSlide(list[0], 300);
           trigger = false;
         } else {
-          showImage(img.previousSibling);
-          hideImage(img);
+          toggleSlideToLeft(img);
+          slideCurrentLeft(img, 300);
+          showNextSlide(img.nextSibling, 300);
           trigger = false;
         }
       }
@@ -26,17 +34,20 @@ function clickArrowLeft() {
 function clickArrowRight() {
   const { arrowRightDiv } = findElement();
   const list = findElement().imagesList;
+
   arrowRightDiv.addEventListener('click', () => {
     let trigger = true;
     list.forEach((img) => {
       if (img.style.display !== 'none' && trigger) {
-        if (img.nextSibling === null) {
-          showImage(list[0]);
-          hideImage(img);
+        if (img.previousSibling === null) {
+          toggleSlideToRight(img);
+          slideCurrentRight(img, 300);
+          showNextSlide(list[list.length - 1], 300);
           trigger = false;
         } else {
-          showImage(img.nextSibling);
-          hideImage(img);
+          toggleSlideToRight(img);
+          slideCurrentRight(img, 300);
+          showNextSlide(img.previousSibling, 300);
           trigger = false;
         }
       }

@@ -13,7 +13,10 @@ function assignImage() {
   const fourth = new Image();
   const left = new Image();
   const right = new Image();
-  const circle = new Image();
+  const circle1 = new Image();
+  const circle2 = new Image();
+  const circle3 = new Image();
+  const circle4 = new Image();
 
   first.src = One;
   second.src = Two;
@@ -21,9 +24,23 @@ function assignImage() {
   fourth.src = Four;
   right.src = Right;
   left.src = Left;
-  circle.src = Circle;
+  circle1.src = Circle;
+  circle2.src = Circle;
+  circle3.src = Circle;
+  circle4.src = Circle;
 
-  return { first, second, third, fourth, right, left, circle };
+  return {
+    first,
+    second,
+    third,
+    fourth,
+    right,
+    left,
+    circle1,
+    circle2,
+    circle3,
+    circle4,
+  };
 }
 
 export default assignImage;

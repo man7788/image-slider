@@ -11,15 +11,34 @@ body {
 .container {
   border: 2px solid orange;
   width: 1000px;
-  height: 364px;
-  display: flex;
-  justify-content: space-between;
+  height: 400px;
 }
 
-.slides {
-  border: 2px solid greenyellow;
+.frame {
+  /* border: 2px solid greenyellow; */
+  width: 1000px;
+  height: 364px;
   display: flex;
-  /* justify-self: center; */
+  justify-content: center;
+}
+
+
+.slides {
+  /* border: 2px solid red; */
+  overflow: hidden;
+  display: flex;
+}
+
+.slides img.current {
+  transition: transform 300ms ease-in-out;
+}
+
+.slideToLeft {
+  transform: translateX(-538.22px);
+}
+
+.slideToRight {
+  transform: translateX(538.22px);
 }
 
 .arrow-left img,
@@ -32,4 +51,17 @@ body {
   align-self: center;
   filter: invert(70%);
   cursor: pointer;
+}
+
+.bottom {
+  /* border: 2px solid greenyellow; */
+  display: flex;
+  justify-content: center;
+}
+
+.bottom img {
+  width: 28px;
+  filter: invert(70%);
+  cursor: pointer;
+  align-self: flex-end;
 }
