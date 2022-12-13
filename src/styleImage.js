@@ -1,7 +1,7 @@
 import findElement from './findElement';
 
 function defaultImage() {
-  const images = findElement().imagesList;
+  const images = findElement().imageList;
   images[0].classList.add('current');
   for (let i = 1; i < images.length; i++) {
     images[i].style.display = 'none';

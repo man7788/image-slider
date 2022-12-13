@@ -54,14 +54,13 @@ body {
 }
 
 .bottom {
-  /* border: 2px solid greenyellow; */
+  border: 2px solid greenyellow;
   display: flex;
   justify-content: center;
 }
 
 .bottom img {
-  width: 28px;
+  width: 18px;
   filter: invert(70%);
   cursor: pointer;
-  align-self: flex-end;
 }

@@ -9,7 +9,7 @@ import {
 
 function clickArrowLeft() {
   const { arrowLeftDiv } = findElement();
-  const list = findElement().imagesList;
+  const list = findElement().imageList;
 
   arrowLeftDiv.addEventListener('click', () => {
     let trigger = true;
@@ -33,7 +33,7 @@ function clickArrowLeft() {
 
 function clickArrowRight() {
   const { arrowRightDiv } = findElement();
-  const list = findElement().imagesList;
+  const list = findElement().imageList;
 
   arrowRightDiv.addEventListener('click', () => {
     let trigger = true;
