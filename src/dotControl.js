@@ -1,5 +1,5 @@
 import findElement from './findElement';
-import { showImage, hideImage, toggleCurrent } from './styleImage';
+import { showImage, hideImage } from './styleImage';
 
 function clickDots() {
   const { dotList } = findElement();
@@ -12,11 +12,9 @@ function clickDots() {
       } else {
         showImage(imageList[i]);
         highlightDot(i);
-        toggleCurrent(imageList[i]);
         imageList.forEach((img) => {
           if (img.style.display !== 'none' && img !== imageList[i]) {
             hideImage(img);
-            toggleCurrent(img);
           }
         });
       }

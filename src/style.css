@@ -29,7 +29,7 @@ body {
   display: flex;
 }
 
-.slides img.current {
+.slides img {
   transition: transform 300ms ease-in-out;
 }
 
