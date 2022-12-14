@@ -11,8 +11,7 @@ import { highlightDot } from './dotControl';
 function clickArrowLeft() {
   const { arrowLeftDiv } = findElement();
   const list = findElement().imageList;
-
-  arrowLeftDiv.addEventListener('click', () => {
+  const slideLeft = () => {
     let trigger = true;
     for (let i = 0; i < list.length; i++) {
       if (list[i].style.display !== 'none' && trigger) {
@@ -31,14 +30,15 @@ function clickArrowLeft() {
         }
       }
     }
-  });
+  };
+  arrowLeftDiv.addEventListener('click', slideLeft);
+  return { slideLeft };
 }
 
 function clickArrowRight() {
   const { arrowRightDiv } = findElement();
   const list = findElement().imageList;
-
-  arrowRightDiv.addEventListener('click', () => {
+  const slideRight = () => {
     let trigger = true;
     for (let i = 0; i < list.length; i++) {
       if (list[i].style.display !== 'none' && trigger) {
@@ -57,7 +57,10 @@ function clickArrowRight() {
         }
       }
     }
-  });
+  };
+
+  arrowRightDiv.addEventListener('click', slideRight);
+  return { slideRight };
 }
 
 export { clickArrowLeft, clickArrowRight };

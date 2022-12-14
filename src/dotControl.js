@@ -26,9 +26,8 @@ function clickDots() {
 
 function highlightDot(n) {
   const { dotList } = findElement();
-  // if (dotList[n].classList[0] !== 'highlight') {
+
   dotList[n].classList.toggle('highlight');
-  // }
   for (let i = 0; i < dotList.length; i++) {
     if (dotList[i] !== dotList[n]) {
       dotList[i].classList.remove('highlight');
