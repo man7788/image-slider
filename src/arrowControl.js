@@ -6,6 +6,7 @@ import {
   slideCurrentRight,
   showNextSlide,
 } from './styleImage';
+import { highlightDot } from './dotControl';
 
 function clickArrowLeft() {
   const { arrowLeftDiv } = findElement();
@@ -13,21 +14,23 @@ function clickArrowLeft() {
 
   arrowLeftDiv.addEventListener('click', () => {
     let trigger = true;
-    list.forEach((img) => {
-      if (img.style.display !== 'none' && trigger) {
-        if (img.nextSibling === null) {
-          toggleSlideToLeft(img);
-          slideCurrentLeft(img, 300);
-          showNextSlide(list[0], 300);
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].style.display !== 'none' && trigger) {
+        if (list[i].previousSibling === null) {
+          toggleSlideToRight(list[i]);
+          slideCurrentRight(list[i], 300);
+          showNextSlide(list[list.length - 1], 300);
+          highlightDot(list.length - 1);
           trigger = false;
         } else {
-          toggleSlideToLeft(img);
-          slideCurrentLeft(img, 300);
-          showNextSlide(img.nextSibling, 300);
+          toggleSlideToRight(list[i]);
+          slideCurrentRight(list[i], 300);
+          showNextSlide(list[i].previousSibling, 300);
+          highlightDot(i - 1);
           trigger = false;
         }
       }
-    });
+    }
   });
 }
 
@@ -37,21 +40,23 @@ function clickArrowRight() {
 
   arrowRightDiv.addEventListener('click', () => {
     let trigger = true;
-    list.forEach((img) => {
-      if (img.style.display !== 'none' && trigger) {
-        if (img.previousSibling === null) {
-          toggleSlideToRight(img);
-          slideCurrentRight(img, 300);
-          showNextSlide(list[list.length - 1], 300);
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].style.display !== 'none' && trigger) {
+        if (list[i].nextSibling === null) {
+          toggleSlideToLeft(list[i]);
+          slideCurrentLeft(list[i], 300);
+          showNextSlide(list[0], 300);
+          highlightDot(0);
           trigger = false;
         } else {
-          toggleSlideToRight(img);
-          slideCurrentRight(img, 300);
-          showNextSlide(img.previousSibling, 300);
+          toggleSlideToLeft(list[i]);
+          slideCurrentLeft(list[i], 300);
+          showNextSlide(list[i].nextSibling, 300);
+          highlightDot(i + 1);
           trigger = false;
         }
       }
-    });
+    }
   });
 }
 

@@ -1,5 +1,6 @@
 import assignImage from './importImage';
 import findElement from './findElement';
+import './style.css';
 
 function appendToSlides() {
   const div = findElement().slidesDiv;
@@ -23,16 +24,10 @@ function appendToBottom() {
   const { circle2 } = assignImage();
   const { circle3 } = assignImage();
   const { circle4 } = assignImage();
-  const { dot } = assignImage();
 
-  circle1.classList.add('circle');
-  circle2.classList.add('circle');
-  circle3.classList.add('circle');
-  circle4.classList.add('circle');
+  circle1.classList.add('highlight');
 
-  dot.classList.add('dot');
-
-  div.append(dot, circle2, circle3, circle4);
+  div.append(circle1, circle2, circle3, circle4);
 }
 
 export { appendToSlides, appendToBottom };

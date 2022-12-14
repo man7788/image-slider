@@ -60,7 +60,13 @@ body {
 }
 
 .bottom img {
-  width: 18px;
+  width: 15px;
   filter: invert(70%);
   cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.highlight {
+  -webkit-mask-image: url(./image/checkbox-blank-circle.svg);
+  background: black;
 }
